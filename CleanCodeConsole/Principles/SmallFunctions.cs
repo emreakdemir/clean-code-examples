@@ -35,30 +35,6 @@ public class SmallFunctions
         return IsNameValid(user.Name) && IsAgeValid(user.Age);
     }
     #endregion
-
-    #region Class-BadPractice
-    public class Book
-    {
-        public string Title { get; set; }
-        public string Author { get; set; }
-        public int PageCount { get; set; }
-        public DateTime PublicationDate { get; set; }
-    }
-    #endregion
-
-    #region Class-CleanCode
-    public class Book
-    {
-        public string Title { get; set; }
-        public string Author { get; set; }
-    }
-
-    public class BookDetails
-    {
-        public int PageCount { get; set; }
-        public DateTime PublicationDate { get; set; }
-    }
-    #endregion
 }
 
 #region Nested

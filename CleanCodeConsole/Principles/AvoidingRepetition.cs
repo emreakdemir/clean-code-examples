@@ -1,40 +1,43 @@
-namespace CleanCodeConsole.Principles;
-
-public class AvoidingRepetition
+namespace BadPractice
 {
-    #region ProductPrice-BadPractice
-    public void AddProduct(Product product)
+    public class ProductManager
     {
-        //Product Validate
-        double productPrice = product.Price * (product.Price * product.Tax);
-        //Product Operations
-    }
+        public void AddProduct(Product product)
+        {
+            //Product Validate
+            double productPrice = product.Price * (product.Price * product.Tax);
+            //Product Operations
+        }
 
-    public void UpdateProduct(Product product)
+        public void UpdateProduct(Product product)
+        {
+            //Product Validate
+            double productPrice = product.Price * (product.Price * product.Tax);
+            //Product Operations
+        }
+    }
+}
+
+namespace CleanCode
+{
+    public class ProductManager
     {
-        //Product Validate
-        double productPrice = product.Price * (product.Price * product.Tax);
-        //Product Operations
-    }
-    #endregion
+        public void AddProduct(Product product)
+        {
+            //Product Validate
+            double productPrice = CalculateTotalPrice(product.Price, product.Tax);
+            //Product Operations
+        }
 
-    #region ProductPrice-CleanCode
-    public void AddProduct(Product product)
-    {
-        //Product Validate
-        double productPrice = CalculateTotalPrice(product.Price, product.Tax);
-        //Product Operations
-    }
+        public void UpdateProduct(Product product)
+        {
+            //Product Validate
+            double productPrice = CalculateTotalPrice(product.Price, product.Tax);
+            //Product Operations
+        }
 
-    public void UpdateProduct(Product product)
-    {
-        //Product Validate
-        double productPrice = CalculateTotalPrice(product.Price, product.Tax);
-        //Product Operations
+        private double CalculateTotalPrice(double price, double tax) => price + (price * tax);
     }
-
-    private double CalculateTotalPrice(double price, double tax) => price + (price * tax);
-    #endregion
 }
 
 #region Nested

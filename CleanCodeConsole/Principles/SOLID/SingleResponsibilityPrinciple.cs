@@ -18,7 +18,7 @@ public class SingleResponsibilityPrinciple
     #endregion
 
     #region CleanCode
-    public class Report
+    public class Reporter
     {
         public void Generate()
         {
@@ -38,7 +38,7 @@ public class SingleResponsibilityPrinciple
     {
         public void Generate()
         {
-            var report = new Report();
+            var report = new Reporter();
             report.Generate();
             var fileSaver = new FileSaver();
             fileSaver.Save();

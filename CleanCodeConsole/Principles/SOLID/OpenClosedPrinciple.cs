@@ -1,8 +1,7 @@
-namespace CleanCodeConsole.Principles.SOLID;
+using CleanCode;
 
-public class OpenClosedPrinciple
+namespace BadPractice
 {
-    #region BadPractice
     public class AreaCalculator
     {
         public double Calculate(object shape)
@@ -20,15 +19,15 @@ public class OpenClosedPrinciple
             return 0;
         }
     }
-    #endregion
+}
 
-    #region CleanCode
-    
+namespace CleanCode
+{
     public interface IShape
     {
         double Area();
     }
-    
+
     public class AreaCalculator
     {
         public double CalculateArea(IShape shape)
@@ -57,6 +56,4 @@ public class OpenClosedPrinciple
             return Width * Height;
         }
     }
-    
-    #endregion
 }
